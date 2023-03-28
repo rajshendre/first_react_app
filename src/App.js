@@ -1,23 +1,47 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import Second from "./second";
+import "./second.css";
+import Third from "./third";
+import Fourth from "./fourth";
+import Fifth from "./fifth";
+import "./third.css";
+import "./fourth.css";
+import "./fifth.css";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
 function App() {
+  const propL = [
+    {
+      name: "raj",
+    },
+    {
+      name: "ajay",
+    },
+    {
+      name: "karan",
+    },
+  ];
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1 className="app">This is my first : (Default Page App) </h1>
+      <Second />
+    <Third textT={"This Data is coming from third page:=>"} data={propL}/>
+    <Fourth />
+  <Fifth />    
+      {/* <BrowserRouter>
+        <div>
+          <nav>
+            <ul>
+              <li>
+                <link to ='/' >this page</link>
+                <link to ='/third' >third page</link>
+                <link to ='/fourth' >fourth page</link>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </BrowserRouter> */}
     </div>
   );
 }
